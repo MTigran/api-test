@@ -3,16 +3,10 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#scope">Scope</a></li>
-    <li><a href="#test-approach ">Test Approach </a></li>
+    <li><a href="#test-approach">Test Approach</a></li>
     <li><a href="#test-environment">Test Environment</a></li>
     <li><a href="#testing-tools">Testing Tools</a></li>
-    <li><a href="#todo">#TODO</a></li>
-    <!-- 
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    -->
+    <li><a href="#risks">Risks</a></li>
   </ol>
 </details>
 
@@ -44,34 +38,15 @@
 * TestNG as testing framework
 * Automation cron job should be set in Jenkins(or other DevOps tool)
 * Jenkins Test Reports Analizer for defect analizing
-* Klov Reporter as bug reporting tool
+* Extent Reporter as bug reporting tool
 
-### Test Levels
+## Risks
 
-* Unit testing
-* Performance testing
+### Development related risks
 
-### Bug Triage
+* Less skilled programmers
 
-Responses that are not alligned with or mentioned in the bottom of [GoREST](https://gorest.co.in) web page 
-are counted as bugs and be showed as FAILED in report.
+### Testing related risks
 
-### Suspension Criteria and Resumption Requirements
+* Lack of sufficient time
 
-None
-
-### Test Completeness
-
-* Allegiance with the document
-* Functioning framework
-* Coverage of at least few of each unit/performance/security cases
-
-
-## Test Deliverables
-
-* Test Plan
-* Test Strategy
-* Test Cases
-* Bug Reports
-
-# TODO

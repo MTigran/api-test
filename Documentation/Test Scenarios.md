@@ -6,25 +6,25 @@
     <li>
     <a href="#test-scenarios">Test Scenarios</a>
       <ul>
-        <li><a href="#scenario-set-1">Scenario Set 1: Positive case for calling GET request</a>
+        <li><a href="#scenario-set-1">Scenario Set 1: Positive scenario for calling GET request</a>
       </ul>
       <ul>
         <li><a href="#scenario-set-2">Scenario Set 2: Negative scenario for calling GET request</a>
       </ul>
       <ul>
-        <li><a href="#scenario-set-3">Scenario Set 3: Positive case for calling POST request</a>
+        <li><a href="#scenario-set-3">Scenario Set 3: Positive scenario for calling POST request</a>
       </ul>
       <ul>
         <li><a href="#scenario-set-4">Scenario Set 4: Negative scenario for calling POST request</a>
       </ul>
       <ul>
-        <li><a href="#scenario-set-5">Scenario Set 5: Negative case for calling PATCH request</a>
+        <li><a href="#scenario-set-5">Scenario Set 5: Negative scenario for calling PATCH request</a>
       </ul>
       <ul>
         <li><a href="#scenario-set-6">Scenario Set 6: Negative scenario for calling PUT request</a>
       </ul>
       <ul>
-        <li><a href="#scenario-set-7">Scenario Set 7: Negative case for calling DELETE request</a>
+        <li><a href="#scenario-set-7">Scenario Set 7: Negative scenario for calling DELETE request</a>
       </ul>
       <ul>
         <li><a href="#scenario-set-8">Scenario Set 8: Positive scenario for calling OPTIONS request</a>
@@ -52,7 +52,7 @@
 * Have initial test data in the DB. Example: expected status codes and responses.
 
 ### Scenario Set 1
-#### Positive case for calling GET request
+#### Positive scenario for calling GET request
 
   <ol>
     <li>Step 1: Connect to database and API.</li>
@@ -100,7 +100,7 @@
   </ol>
 
 ### Scenario Set 3
-#### Positive case for calling POST request
+#### Positive scenario for calling POST request
 
   <ol>
     <li>Step 1: Connect to database and API.</li>
@@ -148,7 +148,7 @@
   </ol>
 
 ### Scenario Set 5
-#### Negative case for calling PATCH request
+#### Negative scenario for calling PATCH request
 
    <ol>
     <li>Step 1: Connect to database and API.</li>
@@ -196,7 +196,7 @@
   </ol>
 
 ### Scenario Set 7
-#### Negative case for calling DELETE request
+#### Negative scenario for calling DELETE request
 
    <ol>
     <li>Step 1: Connect to database and API.</li>

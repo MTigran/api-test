@@ -27,7 +27,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#built-using">Built Using</a></li>
       </ul>
     </li>
     <li>
@@ -51,34 +51,27 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-
-
 This is a DEMO project for API testing using Java Selenium.
 
-Documents to be provided:
-* Test Plan
-* Test Strategy
-* Test Scenarios
+Documentations:
+* [Test Plan](Documentation/Test%20Plan.md)
+* [Test Strategy](Documentation/Test%20Strategy.md)
+* [Test Scenarios](Documentation/Test%20Scenarios.md)
 
 
-### Built With
+### Built Using
 
 This section will list any major frameworks that are used to built the project.
 * [Java](https://java.com)
-* [Selenium](https://www.selenium.dev)
 * [Maven](https://maven.apache.org)
-* [TestNG](https://testng.org)
 * [Docker](https://www.docker.com)
-* [MangoDB](https://www.mongodb.com)
-* [ExtentReports](https://www.extentreports.com)
-
-
+* [MongoDB](https://www.mongodb.com)
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
 This project is an automation framework that will need several steps for it's installation.
-After the test a report will be created in 127.0.0.1:899
+After the test a report will be created in [localhost](127.0.0.1:899)
 
 ### Prerequisites
 
@@ -120,7 +113,7 @@ General examples include:
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [Test Plan]() when it is ready.
+See the [Test Plan](Documentation/Test%20Plan.md).
 
 
 <!-- CONTRIBUTING 

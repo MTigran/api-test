@@ -3,12 +3,15 @@ package configurations;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.mongodb.MongoClient;
 
 public class Navigation {
 	public static MongoClient conn;
-	
+    
 	// Constructor	
 	public Navigation(MongoClient conn) {
 		Navigation.conn = conn;
@@ -54,4 +57,38 @@ public class Navigation {
 	    }
 	}
 	
+	/**
+	 * Pool and send requests. <b>pool_size</b> copies of selected request <b>method</b> will be sent. 
+	 * @param uri Request will be sent here
+	 * @param pool_size Number of requests to be made
+	 * @param method Choose request method: GET, POST, HEAD, OPTIONS, PUT, DELETE, TRACE
+	 * @throws InterruptedException
+	 * @throws IOException
+	 */
+	public static void bulkRequests(String uri, int pool_size, String method) throws InterruptedException, IOException {
+		URL api = new URL(uri);
+	    int INITIAL_POOL_SIZE = pool_size;
+		List<HttpURLConnection> pool = new ArrayList<>(INITIAL_POOL_SIZE);
+		URLConnection apic = api.openConnection();
+		HttpURLConnection httpc = (HttpURLConnection) apic;
+		httpc.setRequestMethod(method);
+		
+		for (int i = 0; i < INITIAL_POOL_SIZE; i++) {
+            pool.add(httpc);
+        }
+		
+		Thread[] threads = new Thread[pool_size];
+		for (int i = 0; i < threads.length; i++) {
+		    try {
+				threads[i] = new Thread((Runnable) pool.get(i).getContent());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		    threads[i].start();
+		}
+		
+		for (int i = 0; i < threads.length; i++) {
+		    threads[i].join();
+		}
+	}
 }

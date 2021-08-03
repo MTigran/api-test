@@ -7,21 +7,15 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mongodb.MongoClient;
+import Methods.REST_requests;
 
 public class Navigation {
-	public static MongoClient conn;
-    
-	// Constructor	
-	public Navigation(MongoClient conn) {
-		Navigation.conn = conn;
-	}
 	
 	/**
 	 * Ping HTTP URL. This effectively sends a HEAD request and returns <code>true</code> if the response code is in 
 	 * the 200-399 range.
 	 * @param url The HTTP URL to be pinged.
-	 * @param timeout The timeout in millis for both the connection timeout and the response read timeout. Note that
+	 * @param timeout The timeout in seconds for both the connection timeout and the response read timeout. Note that
 	 * the total timeout is effectively two times the given timeout.
 	 * @return true if the given HTTP URL has returned response code 200-399 on a HEAD request within the
 	 * given timeout, otherwise - false.
@@ -32,7 +26,7 @@ public class Navigation {
 	    try {
 	        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
 	        connection.setConnectTimeout(timeout);
-	        connection.setReadTimeout(timeout);
+	        connection.setReadTimeout(timeout*1000);
 	        connection.setRequestMethod("HEAD");
 	        int responseCode = connection.getResponseCode();
 	        return (200 <= responseCode && responseCode <= 399);
@@ -43,14 +37,12 @@ public class Navigation {
 	
 	/**
 	 * Ping MongoDB. This effectively sends a database request and returns database's collection.
-	 * @param timeout The timeout in millis for both the connection timeout and the response read timeout. Note that
-	 * the total timeout is effectively two times the given timeout.
 	 * @return true if the database has returned response in the given timeout, 
 	 * otherwise - false.
 	 */
-	public static boolean pingDB(int timeout) {
+	public static boolean pingDB() {
 	    try {
-	    	String response = conn.getDatabase("api-test").toString();
+	    	String response = Database.conn.getDatabase("api-test").toString();
 	        return (response != null);
 	    } catch (Exception exception) {
 	        return false;
@@ -90,5 +82,16 @@ public class Navigation {
 		for (int i = 0; i < threads.length; i++) {
 		    threads[i].join();
 		}
+	}
+	
+	// *********INSTANCES*********
+	protected Database Database() { 
+		Database DB = new Database(Database.conn);
+		return DB;
+	}
+	
+	protected REST_requests REST_requests() { 
+		REST_requests REST_requests = new REST_requests();
+		return REST_requests;
 	}
 }

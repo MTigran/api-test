@@ -10,11 +10,13 @@ import com.mongodb.client.MongoDatabase;
 
 
 public class Database extends Navigation {
+	public static MongoClient conn;
 	// *********Constructor*********
+    
+	// Constructor	
 	public Database(MongoClient conn) {
-		super(conn);
+		Database.conn = conn;
 	}
-
 	// *********DB Variables*********
 	// Database That will be used
 	@SuppressWarnings("unused")
@@ -42,7 +44,7 @@ public class Database extends Navigation {
 		return conn = new MongoClient(new MongoClientURI("mongodb://localhost:27017"));
 	}
 
-	// *********Page Methods*********
+	// *********Methods*********
 
 
 	/**

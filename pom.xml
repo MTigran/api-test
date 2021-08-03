@@ -14,6 +14,12 @@
 		</dependency>
 		
 		<dependency>
+    		<groupId>org.json</groupId>
+    		<artifactId>json</artifactId>
+    		<version>20180130</version>
+		</dependency>
+		
+		<dependency>
 		    <groupId>com.aventstack</groupId>
 		    <artifactId>klov-reporter</artifactId>
 		    <version>5.0.8</version>
@@ -64,12 +70,9 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>${suite}</suiteXmlFile>
 					</suiteXmlFiles>
-					<!-- 
 					<systemPropertyVariables>
-						<propertyName>${sub}</propertyName>
-						<propertyName>${status}</propertyName>
+						<propertyName>${method}</propertyName>
 					</systemPropertyVariables>
-					-->
 				</configuration>
 			</plugin>
 		</plugins>
